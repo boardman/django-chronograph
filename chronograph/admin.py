@@ -10,8 +10,9 @@ except ImportError:
     from django.contrib.admin import ModelAdmin
 
 class JobAdmin(admin.ModelAdmin):
-    list_display = ('name', 'next_run', 'last_run', 'frequency', 'params', 'get_timeuntil', 'is_running')
+    list_display = ('name', 'next_run', 'last_run', 'frequency', 'params', 'get_timeuntil', 'is_running', 'disabled')
     list_filter = ('frequency', 'disabled',)
+    list_editable = ('disabled',)
     
     fieldsets = (
         (None, {
